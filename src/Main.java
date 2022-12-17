@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         final JFrame f = new JFrame();
         GameJPanel gm = new GameJPanel();
-        f.setTitle("飛機射擊遊戲");
+        f.setTitle("小朋友下樓梯");
         f.setSize(700, 650);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.add(gm);
