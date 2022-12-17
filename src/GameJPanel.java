@@ -36,7 +36,7 @@ public class GameJPanel extends javax.swing.JPanel {
         try {
             bgImg=new ImageIcon(getClass().getResource("sea.png")).getImage();
             clip= Applet.newAudioClip(getClass().getResource("bomb.wav"));
-            bgmusic=Applet.newAudioClip(getClass().getResource("Alarm01.wav"));
+            bgmusic=Applet.newAudioClip(getClass().getResource("r/bg.wav"));
         }catch (Exception e){
 
         }
