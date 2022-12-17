@@ -35,7 +35,7 @@ public class GameJPanel extends javax.swing.JPanel {
         this.addMouseMotionListener(new CMyListener1());
         try {
             bgImg=new ImageIcon(getClass().getResource("sea.png")).getImage();
-            clip= Applet.newAudioClip(getClass().getResource("bomb.wav"));
+            clip= Applet.newAudioClip(getClass().getResource("r/die.wav"));
             bgmusic=Applet.newAudioClip(getClass().getResource("r/bg.wav"));
         }catch (Exception e){
 
