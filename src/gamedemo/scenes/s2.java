@@ -38,10 +38,10 @@ public class s2 extends Scene {
 
     @Override
     public void update() {
-        //player.update();
+        player.update();
         if(b==2)
         {
-            player.update();
+            //player.update();
             x+=10;
             if(x>739)
             {
@@ -50,17 +50,17 @@ public class s2 extends Scene {
         }
         else if(b==1)
         {
-            player.update();
+            //player.update();
             x-=10;
             if(x<18)
             {
                 x=18;
             }
         }
-        else
-        {
-            player.update();
-        }
+//        else
+//        {
+//            player.update();
+//        }
     }
 
     @Override
@@ -75,14 +75,13 @@ public class s2 extends Scene {
             public void keyPressed(int commandCode, long trigTime) {
                 if(commandCode== KeyEvent.VK_LEFT)
                 {
-                    player.setState(player.LEFT);
                     b=1;
-
+                    player.setState(player.LEFT);
                 }
                 else if(commandCode== KeyEvent.VK_RIGHT)
                 {
-                    player.setState(player.RIGHT);
                     b=2;
+                    player.setState(player.RIGHT);
                 }
             }
 
