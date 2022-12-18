@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
 
 public class s2 extends Scene {
     int x,y,b;
-    Animator ar,al;
+    Animator ar,al,as;
     @Override
     public void sceneBegin() {
         x=30;
@@ -19,6 +19,8 @@ public class s2 extends Scene {
         b=0;
         ar=new Animator("../../../r/roll_right.png",5,30,32,new int[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19});
         al=new Animator("../../../r/roll_left.png",5,30,32,new int[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19});
+        as=new Animator("../../../r/select.png",5,22,32,new int[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19});
+
 //        new int[](0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19),20
         //AudioResourceController.getInstance().shot("../../../r/bg.wav");
     }
@@ -34,8 +36,10 @@ public class s2 extends Scene {
         g.drawImage(ImageController.instance().tryGetImage("../../../r/ceiling.png"),0,0,800,16,null );
         g.drawImage(ImageController.instance().tryGetImage("../../../r/wall.png"),770,0,18,600,null );
         g.drawImage(ImageController.instance().tryGetImage("../../../r/wall.png"),0,0,18,600,null );
-        if(b==0)
-            g.drawImage(ImageController.instance().tryGetImage("../../../r/player_1.png"),x,y,null );
+        if(b==0){
+//            g.drawImage(ImageController.instance().tryGetImage("../../../r/player_1.png"),x,y,null );
+            as.paint(x,y,g);
+        }
         else if(b==1)
         {
 //            g.drawImage(ImageController.instance().tryGetImage("../../../r/player_4.png"),x,y,null );
@@ -64,7 +68,7 @@ public class s2 extends Scene {
                 x=739;
             }
         }
-        if(b==1)
+        else if(b==1)
         {
             al.update();
             x-=10;
@@ -72,6 +76,10 @@ public class s2 extends Scene {
             {
                 x=18;
             }
+        }
+        else
+        {
+            as.update();
         }
     }
 
