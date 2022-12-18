@@ -1,3 +1,5 @@
+package gamedemo.objects;
+
 import gamedemo.utils.gameobjects.Animator;
 import gamedemo.utils.gameobjects.GameObject;
 
