@@ -4,7 +4,7 @@ package gamedemo.scenes;
 import gamedemo.utils.controllers.ImageController;
 import gamedemo.utils.core.CommandSolver;
 import gamedemo.utils.core.Scene;
-import gamedemo.utils.gameobjects.Animator;
+//import gamedemo.utils.gameobjects.Animator;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -12,7 +12,6 @@ import java.awt.event.KeyEvent;
 public class s2 extends Scene {
     int x,y,b;
 //    Animator ar,al,as;
-    Player player;
     @Override
     public void sceneBegin() {
         x=30;
