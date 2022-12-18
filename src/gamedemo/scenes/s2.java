@@ -12,14 +12,13 @@ import java.awt.event.KeyEvent;
 
 public class s2 extends Scene {
     Player player;
-    int x,y,b;
+    int x,y;
 //    Animator ar,al,as;
 
     @Override
     public void sceneBegin() {
         x=30;
         y=30;
-        b=0;
         player=new Player(x,y);
     }
 
@@ -39,28 +38,6 @@ public class s2 extends Scene {
     @Override
     public void update() {
         player.update();
-        if(b==2)
-        {
-            //player.update();
-            x+=10;
-            if(x>739)
-            {
-                x=739;
-            }
-        }
-        else if(b==1)
-        {
-            //player.update();
-            x-=10;
-            if(x<18)
-            {
-                x=18;
-            }
-        }
-//        else
-//        {
-//            player.update();
-//        }
     }
 
     @Override
@@ -75,12 +52,10 @@ public class s2 extends Scene {
             public void keyPressed(int commandCode, long trigTime) {
                 if(commandCode== KeyEvent.VK_LEFT)
                 {
-                    b=1;
                     player.setState(player.LEFT);
                 }
                 else if(commandCode== KeyEvent.VK_RIGHT)
                 {
-                    b=2;
                     player.setState(player.RIGHT);
                 }
             }
@@ -88,7 +63,6 @@ public class s2 extends Scene {
             @Override
             public void keyReleased(int commandCode, long trigTime) {
                 player.setState(player.STAND_STILL);
-                b=0;
             }
 
             @Override
