@@ -10,8 +10,10 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class s2 extends Scene {
+
     int x,y,b;
 //    Animator ar,al,as;
+
     @Override
     public void sceneBegin() {
         x=30;
