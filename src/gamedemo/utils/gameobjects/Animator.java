@@ -24,10 +24,20 @@ public class Animator {
     int width;
     int height;
     int[] actions;
+    int sourceWidth;
+    int sourceHeight;
+    int picSize;
     
     public Animator(String imgPath, int delayFrame, int width, int height, int[] actions){
+        this(imgPath, delayFrame, width, height, actions, actions.length);
+    }
+    
+    public Animator(String imgPath, int delayFrame, int width, int height, int[] actions, int picSize){
         count = 0;
         img = ImageController.instance().tryGetImage(imgPath);
+        this.picSize = picSize;
+        sourceHeight = img.getHeight(null);
+        sourceWidth = img.getWidth(null) / picSize;
         delay = new Delay(delayFrame);
         delay.loop();
         
@@ -36,13 +46,23 @@ public class Animator {
         this.actions = actions;
     }
     
+    public void reset(){
+        count = 0;
+        delay.stop();
+        delay.loop();
+    }
+    
+    public boolean isEnd(){
+        return count == actions.length - 1;
+    }
+    
     public void paint(int left, int top, Graphics g) {
         if (count < actions.length) {
             g.drawImage(img,
                     left, top,
                     left + width, top + height,
-                    width * actions[count], 0,
-                    width + width * actions[count], height, null);
+                    sourceWidth * actions[count], 0,
+                    sourceWidth + sourceWidth * actions[count], sourceHeight, null);
         }
     }
 
