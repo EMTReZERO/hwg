@@ -1,5 +1,6 @@
 package gamedemo;
 
+import gamedemo.scenes.s1;
 import gamedemo.utils.core.GIImpl;
 import gamedemo.utils.core.GameKernel;
 
@@ -44,7 +45,7 @@ public class GameDemo {
                 x ++;
             }
         };*/
-        GIImpl gi=new GIImpl(new DemoScene());
+        GIImpl gi=new GIImpl(new s1());
         GameKernel gk = new GameKernel.Builder(gi,FRAME_LIMIT,UPDATE_TIMES_PER_SEC)
                 .initListener(command)
                 .enableMouseTrack(gi)
