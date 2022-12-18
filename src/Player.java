@@ -3,13 +3,13 @@ import gamedemo.utils.gameobjects.GameObject;
 
 import java.awt.*;
 
-public class player extends GameObject {
+public class Player extends GameObject {
     public static final int STAND_STILL=0;
     public static final int RIGHT=1;
     public static final int LEFT=2;
     private int c;
     Animator[]a;
-    public player(double x, double y) {
+    public Player(double x, double y) {
         super(x, y, 30, 32);
         a=new Animator[3];
         a[STAND_STILL]=new Animator("../../../r/select.png",5,22,32,new int[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19});
