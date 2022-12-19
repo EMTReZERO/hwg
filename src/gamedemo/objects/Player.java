@@ -11,7 +11,7 @@ public class Player extends GameObject {
     public static final int LEFT = 2;
     private int c;
     Animator[] a;
-    double x,y;
+    double x,y=0;
     public Player(double x, double y) {
         super(x, y, 30, 32);
         a = new Animator[3];
@@ -25,6 +25,7 @@ public class Player extends GameObject {
     public void update() {
         a[c].update();
         this.translateX(x);
+        this.translateY(y);
         x=0;
         if(c==RIGHT)
         {
